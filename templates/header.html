@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Go Template</title>
+    <style>
+      .navbar-links {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="bg-gray-800 p-6 max-h-24">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex navbar-links">
+          <a href="/" class="text-white mx-2 hover:text-gray-300">Home</a>
+          {{if .Role}} {{if eq .Role "admin"}}
+          <a href="/admin" class="text-white mx-2 hover:text-gray-300">Admin</a>
+          {{end}} {{end}}
+          <a href="/signin" class="text-white mx-2 hover:text-gray-300"
+            >Sign In</a
+          >
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

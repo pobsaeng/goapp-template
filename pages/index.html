@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go Template</title>
+  </head>
+
+  <body>
+    {{template "header.html"}}
+
+    <div class="container mx-auto">
+      <h1 class="text-4xl font-bold mt-8">Welcome to Tailwind CSS</h1>
+      <div class="grid grid-cols-3 gap-4 mt-4">
+        {{range .Raw}}
+        <div class="p-4 bg-gray-200 rounded shadow">
+          <p class="text-lg font-semibold">{{.}}</p>
+        </div>
+        {{end}}
+      </div>
+    </div>
+
+    {{template "footer.html"}}
+  </body>
+</html>
